@@ -96,11 +96,11 @@ footer{
     color: #fff;
     text-align: center;
 }
-.signup{
+.signup, .login{
     min-height: 75vh;
    justify-content: start;
 }
-.signup-container{
+.signup-container, .login-container{
   
     padding: 2em;
     width: 50%;
