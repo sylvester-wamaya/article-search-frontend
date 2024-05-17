@@ -16,8 +16,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 2em;
-    margin-bottom: 1em;
+    padding: 0.5em 2em;
 }
 nav ul{
     display: flex;
@@ -27,4 +26,31 @@ nav ul{
 nav img{
     width: 60%;
     border-radius: 50%;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+header p{
+    font-style: italic;
+    color: #333;
+}
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+.search-container input{
+    padding: 0.5em 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
 }
