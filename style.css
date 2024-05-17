@@ -54,3 +54,25 @@ header p{
     border-radius: 5px;
     outline: none;
 }
+section{
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    gap: 1em;
+    padding: 2em;
+    width: 80%;
+    margin: 0 auto;
+}
+.article{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 1em;
+    margin: 0.5em;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+.article img{
+    min-width: 100px;
+    max-width: 100%;
+    border-radius: 10px;
+}
