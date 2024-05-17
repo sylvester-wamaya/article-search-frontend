@@ -90,3 +90,9 @@ section{
     padding: 0.5em;
     border-bottom: 1px solid #ddd;
 }
+footer{
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
