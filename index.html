@@ -4,70 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>article-search</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
-        <ul>
-            <li>
-                <img src="assets/article-search.svg" alt="logo">
+            <ul>
+                <img src="assets/article-search.svg" alt="logo" class="logo">
                 <h3>Article Search</h3>
-            </li>
-            <li>
+            </ul>
+            <ul>
                 <li><a href="#">Login</a></li>
                 <li><a href="#">Sign Up</a></li>
-            </li>
-            
-        </ul>
+            </ul>          
+       
     </nav>
-    <section>
+    <header>
         <h1>Search for articles</h1>
         <p>Find articles on any topic you want</p>
-        <div>
+        <div class="search-container">
             <input type="text" name="search" placeholder="Search...">
         </div>
-    </section>
+    </header>
     <section>
         <div>
             <h2>Latest Articles</h2>
-            <div>
-                <div>
+            
+                <div  class="article">
                     <img src="assets/article-search.svg" alt="article-1">
-                    <h3>Article One</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    <a href="#">Read More</a>
+                    <div>
+                        <h3>Article One</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                        <a href="#">Read More</a>
+                    </div>
                 </div>
-                <div>
-                    <img src="assets/article-search.svg" alt="article-2">
-                    <h3>Article Two</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    <a href="#">Read More</a>
+              
+                <div class="article">
+                    <img src="assets/article-search.svg" alt="article-2">                    
+                    <div>
+                        <h3>Article One</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                        <a href="#">Read More</a>
+                    </div>
                 </div>
-                <div>
-                    <img src="assets/article-search.svg" alt="article-3">
-                    <h3>Article Three</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    <a href="#">Read More</a>
+                <div class="article">
+                    <img src="assets/article-search.svg" alt="article-3">                   
+                    <div>
+                        <h3>Article One</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                        <a href="#">Read More</a>
+                    </div>
                 </div>
-                <div>
-                    <img src="assets/article-search.svg" alt="article-4">
-                    <h3>Article Four</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                    <a href="#">Read More</a>
+                <div class="article">
+                    <img src="assets/article-search.svg" alt="article-4">                    
+                    <div>
+                        <h3>Article One</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                        <a href="#">Read More</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div>
+        <div >
             <h2> Search Statistics</h2>
-            <div>
-                <div>
+            <div class="search-stats">
+                <div class="search-item">
                     <h3>Articles</h3>
                     <p>50</p>
                 </div>
-                <div>
+                <div class="search-item">
                     <h3>Categories</h3>
                     <p>20</p>
                 </div>
-                <div>
+                <div class="search-item">
                     <h3>Authors</h3>
                     <p>10</p>
                 </div>
