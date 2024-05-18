@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const statsEl = document.getElementById('stats');
     const articlesEl = document.getElementById('articles');
     let articlesArray = []
+    
 
     searchEl.focus();
 
@@ -38,59 +39,75 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    setInterval(() => {
-        fetch('http://127.0.0.1:3000/searches/search_stats')
-            .then(response => response.json())
-            .then(data => {
-              clearNode(statsEl);
-                data.forEach(element => {
-                    const divEl = document.createElement('div');
-                    const h3El = document.createElement('h4');
-                    const pEl = document.createElement('p');
-                    divEl.classList.add('search-item');
-                    h3El.innerText = element.search[0];
-                    pEl.innerText = element.count;
-                    divEl.appendChild(h3El);
-                    divEl.appendChild(pEl);
-                    statsEl.appendChild(divEl);
-                });
-            });
-
-            fetch('http://127.0.0.1:3000/articles')
+    const fetchArticles = () => {
+        fetch('http://127.0.0.1:3000/articles')
             .then(response => response.json())
             .then(data => {
                 
                 articlesArray = data;
                 appendArticles(data);
-                
-               
             });
-    }, 1000000);
-   
+    }
+
+    fetchArticles();
+
+    const fetchStats = () => {
+        fetch('http://127.0.0.1:3000/searches/search_stats')
+        .then(response => response.json())
+        .then(data => {
+          clearNode(statsEl);
+            data.forEach(element => {
+                const divEl = document.createElement('div');
+                const h3El = document.createElement('h4');
+                const pEl = document.createElement('p');
+                divEl.classList.add('search-item');
+                h3El.innerText = element.search[0];
+                pEl.innerText = element.count;
+                divEl.appendChild(h3El);
+                divEl.appendChild(pEl);
+                statsEl.appendChild(divEl);
+            });
+        });
+
+    }
+
+    setInterval(() => {
+        fetchStats();
+    }, 100000);
+       
+
+    const postSearch = (searchValue) => {
+        fetch("http://127.0.0.1:3000/searches", {
+                    method: "POST",
+                    body: JSON.stringify({searchValue}),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+    }
     
-    searchEl.addEventListener("input", () => {
-        let searchValue = searchEl.value;
-        if (searchValue.length > 0){
-            fetch("http://127.0.0.1:3000/searches", {
-                method: "POST",
-                body: JSON.stringify({searchValue}),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            clearNode(articlesEl);
-            let filteredArticles= articlesArray.filter(article => article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase()));
-            console.log(filteredArticles)
-            appendArticles(filteredArticles);
-            
+    searchEl.addEventListener("input", () => {    
 
-
-        }
+       
+            let searchValue = searchEl.value;
+            if (searchValue.length > 0){
+                postSearch(searchValue);
+                clearNode(articlesEl);
+                let filteredArticles= articlesArray.filter(article => article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase()));
+                console.log(filteredArticles)
+                appendArticles(filteredArticles);
+                
+    
+    
+            }
+       
+  
     
     });
 
+
     
-            
+    
         }
     );
     
