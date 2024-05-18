@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>article-search</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav>
         <a href="index.html">
@@ -14,78 +16,36 @@
                 <h3>Article Search</h3>
             </ul>
         </a>
-            <ul>
-                <li id="login-btn"><a href="login.html">Login</a></li>
-                <li id="signup-btn"><a href="signup.html">Sign Up</a></li>
-            </ul>          
-       
+        <ul>
+            <li id="login-btn"><a href="login.html">Login</a></li>
+            <li id="signup-btn"><a href="signup.html">Sign Up</a></li>
+        </ul>
+
     </nav>
     <header>
         <h1>Search for articles</h1>
         <p>Find articles on any topic you want</p>
         <div class="search-container">
-            <input type="text" name="search" placeholder="Search...">
+            <input id="search-field" type="text" placeholder="Search..." />
         </div>
     </header>
     <section>
-        <div>
+        <div id="articles">
             <h2>Latest Articles</h2>
-            
-                <div  class="article">
-                    <img src="assets/article-search.svg" alt="article-1">
-                    <div>
-                        <h3>Article One</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-              
-                <div class="article">
-                    <img src="assets/article-search.svg" alt="article-2">                    
-                    <div>
-                        <h3>Article One</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <img src="assets/article-search.svg" alt="article-3">                   
-                    <div>
-                        <h3>Article One</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                <div class="article">
-                    <img src="assets/article-search.svg" alt="article-4">                    
-                    <div>
-                        <h3>Article One</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div>
+
+
+
         </div>
-        <div >
+        <div>
             <h2> Search Statistics</h2>
-            <div class="search-stats">
-                <div class="search-item">
-                    <h3>Articles</h3>
-                    <p>50</p>
-                </div>
-                <div class="search-item">
-                    <h3>Categories</h3>
-                    <p>20</p>
-                </div>
-                <div class="search-item">
-                    <h3>Authors</h3>
-                    <p>10</p>
-                </div>
-        </div>
+            <div class="search-stats" id="stats">
+
+            </div>
     </section>
     <footer>
         <p>Article Search &copy; 2020</p>
-    </footer>   
-    
+    </footer>
+    <script src="app.js"></script>
 </body>
+
 </html>
