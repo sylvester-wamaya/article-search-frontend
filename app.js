@@ -32,11 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const clearNode = (node) => {
+        while (node.firstChild) {
+            node.removeChild(node.firstChild);
+        }
+    }
+
     setInterval(() => {
         fetch('http://127.0.0.1:3000/searches/search_stats')
             .then(response => response.json())
             .then(data => {
-              
+              clearNode(statsEl);
                 data.forEach(element => {
                     const divEl = document.createElement('div');
                     const h3El = document.createElement('h4');
@@ -72,9 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Content-Type': 'application/json'
                 }
             })
-            while (articlesEl.lastElementChild) {
-                articlesEl.removeChild(articlesEl.lastElementChild);
-              }
+            clearNode(articlesEl);
             let filteredArticles= articlesArray.filter(article => article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase()));
             console.log(filteredArticles)
             appendArticles(filteredArticles);
