@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let searchValue = searchEl.value;
             let filteredArticles = articlesArray.filter(article => article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase()));
-            if (searchValue.length > 3) {
+            if (searchValue.length > 0) {
 
                 postSearch(searchValue);
 
