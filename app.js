@@ -71,10 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // Fetch search stats every 1 seconds
-    setInterval(() => {
+    // Fetch search stats on reload
+   
         fetchStats();
-    }, 500);
+    
 
     // Function to post search to the API
     const postSearch = (searchValue) => {
@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             clearNode(articlesEl);
             appendArticles(filteredArticles);
+            fetchStats();
         }, 1000);
 
 
