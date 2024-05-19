@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
             node.removeChild(node.firstChild);
         }
     }
-
+   
     // Function to fetch articles from the API
     const fetchArticles = () => {
-        fetch('http://127.0.0.1:3000/articles')
+        fetch(' https://guarded-badlands-30811-5ee0ad011cc5.herokuapp.com/articles')
             .then(response => response.json())
             .then(data => {
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch search stats from the API
     const fetchStats = () => {
-        fetch('http://127.0.0.1:3000/searches/search_stats')
+        fetch(' https://guarded-badlands-30811-5ee0ad011cc5.herokuapp.com/searches/search_stats')
             .then(response => response.json())
             .then(data => {
                 clearNode(statsEl);
@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch search stats every 1 seconds
     setInterval(() => {
         fetchStats();
-    }, 1000000);
+    }, 100000);
 
     // Function to post search to the API
     const postSearch = (searchValue) => {
-        fetch("http://127.0.0.1:3000/searches", {
+        fetch(" https://guarded-badlands-30811-5ee0ad011cc5.herokuapp.com/searches", {
             method: "POST",
             body: JSON.stringify({ searchValue }),
             headers: {
