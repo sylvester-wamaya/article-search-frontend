@@ -61,6 +61,7 @@ section{
     padding: 2em;
     width: 80%;
     margin: 0 auto;
+    min-height: 80vh;
 }
 .article{
     background-color: #fff;
@@ -95,6 +96,7 @@ footer{
     background-color: #333;
     color: #fff;
     text-align: center;
+
 }
 .signup, .login{
     min-height: 75vh;
