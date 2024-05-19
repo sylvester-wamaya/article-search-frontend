@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             node.removeChild(node.firstChild);
         }
     }
-   
+
     // Function to fetch articles from the API
     const fetchArticles = () => {
         fetch(' https://guarded-badlands-30811-5ee0ad011cc5.herokuapp.com/articles')
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    fetchArticles();
+
 
     // Function to fetch search stats from the API
     const fetchStats = () => {
@@ -71,10 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // Fetch search stats on reload
-   
-        fetchStats();
-    
 
     // Function to post search to the API
     const postSearch = (searchValue) => {
@@ -86,6 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     }
+
+    // Fetch articles on reload
+    fetchArticles();
+
+    // Fetch search stats on reload
+    fetchStats();
 
     // Event listener for the search input field
     searchEl.addEventListener("input", () => {
