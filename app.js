@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch search stats every 1 seconds
     setInterval(() => {
         fetchStats();
-    }, 100000);
+    }, 1000);
 
     // Function to post search to the API
     const postSearch = (searchValue) => {
