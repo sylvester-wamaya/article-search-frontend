@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch search stats from the API
     const fetchStats = () => {
-        fetch(`${api_url}/searches/stats`)
+        fetch(`${api_url}/searches`)
             .then(response => response.json())
             .then(data => {
                 clearNode(statsEl);
