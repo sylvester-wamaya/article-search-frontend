@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const articlesEl = document.getElementById('articles');
     let articlesArray = []
     let typingTimeOut = null
-    const api_url = "https://guarded-badlands-30811-5ee0ad011cc5.herokuapp.com/"
+    const api_url = "https://guarded-badlands-30811-5ee0ad011cc5.herokuapp.com"
 
     // Function to append articles to the DOM
     const appendArticles = (articles) => {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch articles from the API
     const fetchArticles = () => {
-        fetch('http://127.0.0.1:3000/articles')
+        fetch(`${api_url}/articles`)
             .then(response => response.json())
             .then(data => {
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch search stats from the API
     const fetchStats = () => {
-        fetch('http://127.0.0.1:3000/searches/search_stats')
+        fetch('api_url/searches/search_stats')
             .then(response => response.json())
             .then(data => {
                 clearNode(statsEl);
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to post search to the API
     const postSearch = (searchValue) => {
-        fetch("http://127.0.0.1:3000/searches", {
+        fetch("api_url/searches", {
             method: "POST",
             body: JSON.stringify({ searchValue }),
             headers: {
