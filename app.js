@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const statsEl = document.getElementById('stats');
     const articlesEl = document.getElementById('articles');
     let articlesArray = []
-    let typingTimeOut = null
+
     const api_url = "https://guarded-badlands-30811-5ee0ad011cc5.herokuapp.com"
     //const api_url = "http://127.0.0.1:3000/"
 
@@ -51,10 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-
     // Function to fetch search stats from the API
     const fetchStats = () => {
-        fetch(`${api_url}/searches`)
+        fetch(`${api_url}/searches_stats`)
             .then(response => response.json())
             .then(data => {
                 clearNode(statsEl);
@@ -72,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
     }
-
 
     // Function to post search to the API
     const postSearch = (searchValue) => {
@@ -93,22 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listener for the search input field
     searchEl.addEventListener("input", () => {
-        clearTimeout(typingTimeOut);
-        typingTimeOut = setTimeout(() => {
 
-            let searchValue = searchEl.value.trim().toLowerCase();
-            let filteredArticles = articlesArray.filter(article => article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase()));
-            if (searchValue.length > 0) {
+        let searchValue = searchEl.value.trim().toLowerCase();
+        let filteredArticles = articlesArray.filter(article => article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase()));
+        if (searchValue.length > 0) {
 
-                postSearch(searchValue);
-
-            }
-            clearNode(articlesEl);
-            appendArticles(filteredArticles);
-            fetchStats();
-        }, 300);
-
-
+            postSearch(searchValue);
+        }
+        clearNode(articlesEl);
+        appendArticles(filteredArticles);
+        fetchStats();
     });
 
 
