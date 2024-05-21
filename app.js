@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearTimeout(typingTimeOut);
         typingTimeOut = setTimeout(() => {
 
-            let searchValue = searchEl.value.trim();
+            let searchValue = searchEl.value.trim().toLowerCase();
             let filteredArticles = articlesArray.filter(article => article.title.toLowerCase().includes(searchValue.toLowerCase()) || article.description.toLowerCase().includes(searchValue.toLowerCase()));
             if (searchValue.length > 0) {
 
